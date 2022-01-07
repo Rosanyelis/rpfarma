@@ -5032,7 +5032,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-nav .nav-link.disabled {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.25);
 }
 
 .navbar-dark .navbar-nav .show > .nav-link,
@@ -35411,7 +35411,8 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e9ecef;
+  background-image: url('../img/loginv2-bg.jpg');
+  background-size: cover;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

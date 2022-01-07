@@ -22,23 +22,24 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-warning">
             <div class="card-header text-center">
-                <img src="{{ asset('dist/img/logo.png')  }}" width="70%" >
+                <img src="{{ asset('dist/img/logo.png')  }}" width="100%" >
             </div>
             <div class="card-body">
 
-                <form action="../../index3.html" method="post">
+                <form method="POST" action="{{ url('logueo') }}">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input type="text" name="email" class="form-control" placeholder="email" required autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-2">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" required autocomplete="current-password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -46,24 +47,17 @@
                         </div>
                     </div>
                     <div class="icheck-primary">
-                        <input type="checkbox" id="remember">
+                        <input type="checkbox" name="remember" id="remember">
                         <label for="remember">
                             Recuerdame
                         </label>
                     </div>
-                    <div class="row mt-3">
+                    <div class="row mt-4">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>    
                         </div>
                     </div>
                 </form>
-
-                {{-- <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
-                </p> --}}
             </div>
             <!-- /.card-body -->
         </div>
