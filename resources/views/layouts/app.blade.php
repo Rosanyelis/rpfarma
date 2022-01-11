@@ -27,8 +27,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <nav class="main-header navbar navbar-expand-md navbar-dark navbar-black">
             <div class="container-fluid">
                 <a href="{{ url('dashboard') }}" class="navbar-brand">
-                    <img src="{{ asset('dist/img/logo.png') }}" alt="AdminLTE Logo"
-                        class="brand-image" style="opacity: .8">
+                    <img src="{{ asset('dist/img/logo.png') }}" alt="AdminLTE Logo" class="brand-image"
+                        style="opacity: .8">
                 </a>
 
                 <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -42,15 +42,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item">
                             <a href="{{ url('/dashboard') }}" class="nav-link">Inicio</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Recetas Dermatológicas</a>
+                        <li class="nav-item dropdown">
+                            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" class="nav-link dropdown-toggle">Recetas</a>
+                            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow"
+                                style="left: 0px; right: inherit;">
+                                <li><a href="#" class="dropdown-item">Recetas Dermatológicos</a></li>
+                                <li><a href="#" class="dropdown-item">Recetas de Jarabe</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Recetas de Jarabe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Productos</a>
+                        <li class="nav-item dropdown">
+                            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" class="nav-link dropdown-toggle">Productos</a>
+                            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow"
+                                style="left: 0px; right: inherit;">
+                                <li><a href="#" class="dropdown-item">Productos Dermatológicos</a></li>
+                                <li><a href="#" class="dropdown-item">Productos de Jarabe</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/usuarios') }}" class="nav-link">Usuarios</a>
@@ -69,16 +77,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <i class="fas fa-envelope mr-2"></i> 4 new messages
                                 <span class="float-right text-muted text-sm">3 mins</span>
                             </a>
-                            
+
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
-                            <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Imagen de Usuario" class="img-circle img-size-32 mr-2">
-                            {{ Auth::user()->name  }}
-                        </a>    
+                            <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Imagen de Usuario"
+                                class="img-circle img-size-32 mr-2">
+                            {{ Auth::user()->name }}
+                        </a>
                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -98,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="content-wrapper">
 
             @yield('content')
-            
+
         </div>
         <!-- /.content-wrapper -->
 
